@@ -1,6 +1,7 @@
-import { FC } from 'react';
-import { Popover, PopoverContent, PopoverTrigger } from '../ui/popover';
-import { LangsE, LangsTitleE, LangStore } from '@/store/language';
+import { FC, useState } from "react";
+import { Popover, PopoverContent, PopoverTrigger } from "../ui/popover";
+import { LangsE, LangsTitleE, LangStore } from "@/store/language";
+import { cn } from "@/lib/utils";
 
 const langData = [
   {
@@ -25,15 +26,34 @@ export const LangMenu: FC<Props> = ({ className }) => {
   const lang = LangStore((state) => state.lang);
   const setLang = LangStore((state) => state.setLang);
 
-  return (
-    <Popover modal={false}>
-      <PopoverTrigger className={className}>{lang.title}</PopoverTrigger>
+  const [open, setOpen] = useState(false);
 
-      <PopoverContent>
+  return (
+    <Popover modal={false} open={open} onOpenChange={() => setOpen(!open)}>
+      <PopoverTrigger
+        className={cn(
+          className,
+          "flex items-center font-semibold gap-2 w-[100px]"
+        )}
+      >
+        <h4>{lang.title}</h4>
+        <img
+          src="/chevron-down.svg"
+          className={cn("transition-all", open && "rotate-180")}
+        />
+      </PopoverTrigger>
+
+      <PopoverContent className="flex flex-col w-fit text-left p-0 rounded-[8px]">
         {langData
           .filter((item) => item.id !== lang.id)
           .map((item) => (
-            <button onClick={() => setLang(item)} className="text-ON_SURFACE">
+            <button
+              onClick={() => {
+                setLang(item);
+                setOpen(false);
+              }}
+              className="text-ON_SURFACE py-3 px-5 font-semibold"
+            >
               {item.title}
             </button>
           ))}

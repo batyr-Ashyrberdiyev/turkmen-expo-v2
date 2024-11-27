@@ -4,7 +4,23 @@
 
 @layer utilities {
   .h1 {
-    @apply text-[56px];
+    @apply text-[56px] leading-[115%] font-medium;
+  }
+
+  .h2 {
+    @apply text-[40px] leading-[120%] font-medium;
+  }
+
+  .h3 {
+    @apply text-[24px] leading-[130%] font-medium text-ON_SURFACE_VAR;
+  }
+
+  .h4 {
+    @apply text-[16px] leading-[130%] font-normal text-ON_SURFACE_VAR;
+  }
+
+  .h5 {
+    @apply text-[12px] leading-[140%] font-medium text-ON_SURFACE_VAR;
   }
 }
 
@@ -12,6 +28,7 @@
   * {
     @apply border-border;
   }
+
   body {
     @apply bg-SURFACE text-ON_SURFACE leading-[130%];
   }
