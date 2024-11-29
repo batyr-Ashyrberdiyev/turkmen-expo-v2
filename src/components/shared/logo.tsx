@@ -6,12 +6,11 @@ interface Props {
   className?: string;
 }
 
-export const Logo: FC<Props> = ({ className }) => {
+export const Logo: FC<Props> = ({ className = 'text-[32px] leading-[150%]' }) => {
   return (
-    <Link to="/">
-      <div className={cn('h-14 w-[198px]', className)}>
-        <img src="/logo.svg" alt="logo" className="size-full object-contain" />
-      </div>
+    <Link to="/" className={cn('flex !font-semibold', className)}>
+      <div className="text-[#059784]">Turkmen</div>
+      <div className="text-[#BC213A]">Expo</div>
     </Link>
   );
 };

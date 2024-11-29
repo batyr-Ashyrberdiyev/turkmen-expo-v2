@@ -1,7 +1,9 @@
-export { Socials } from "./socials";
-
-export { Logo } from "./logo";
-export { LangMenu } from "./lang-menu";
-export { EventCard } from "./event-card";
-export { NewsCard } from "./news-card";
-export { ArrowLink } from "./arrow-link";
+export { Logo } from './logo';
+export { Field } from './field';
+export { Socials } from './socials';
+export { NewsCard } from './news-card';
+export { LangMenu } from './lang-menu';
+export { ArrowLink } from './arrow-link';
+export { EventCard } from './event-card';
+export { ContactsForm } from './form';
+export { ServicesBlock } from './services-block';

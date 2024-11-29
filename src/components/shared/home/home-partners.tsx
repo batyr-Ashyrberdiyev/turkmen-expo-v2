@@ -7,7 +7,7 @@ interface Props {
   className?: string;
 }
 
-export const HomePartners: FC<Props> = ({ className }) => {
+const HomePartners: FC<Props> = ({ className }) => {
   return (
     <section className={cn(className, '')}>
       <Container>
@@ -18,8 +18,8 @@ export const HomePartners: FC<Props> = ({ className }) => {
             {[...Array(6)].map((_, i) => (
               <CarouselItem
                 key={i}
-                className="basis-[188px] mr-8 h-20 bg-SURFACE_CONTAINER border border-CONTAINER_OUTLINE radius-[4px] py-4 px-[38px]">
-                <img src="/partner.svg" className="size-full object-cover" />
+                className="basis-[188px] mr-8 h-20 bg-SURFACE_CONTAINER border border-CONTAINER_OUTLINE radius-[4px] p-4">
+                <img src="/partner.svg" className="size-full object-contain" />
               </CarouselItem>
             ))}
           </CarouselContent>
@@ -28,3 +28,5 @@ export const HomePartners: FC<Props> = ({ className }) => {
     </section>
   );
 };
+
+export default HomePartners;

@@ -2,6 +2,37 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: 'Gilroy';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Gilroy'), url('/fonts/Gilroy-Regular.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Gilroy';
+  font-style: normal;
+  font-weight: 500;
+  src: local('Gilroy'), url('/fonts/Gilroy-Medium.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Gilroy';
+  font-style: normal;
+  font-weight: 600;
+  src: local('Gilroy'), url('/fonts/Gilroy-Semibold.woff2') format('woff2');
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-SURFACE text-ON_SURFACE leading-[130%] font-[Gilroy];
+  }
+}
+
 @layer utilities {
   .h1 {
     @apply text-[56px] leading-[115%] font-medium;
@@ -16,20 +47,18 @@
   }
 
   .h4 {
-    @apply text-[16px] leading-[130%] font-normal text-ON_SURFACE_VAR;
+    @apply text-[16px] leading-6 font-normal text-ON_SURFACE_VAR;
   }
 
   .h5 {
     @apply text-[12px] leading-[140%] font-medium text-ON_SURFACE_VAR;
   }
-}
 
-@layer base {
-  * {
-    @apply border-border;
+  .position-center {
+    @apply absolute top-1/2 -translate-x-1/2 left-1/2 -translate-y-1/2;
   }
 
-  body {
-    @apply bg-SURFACE text-ON_SURFACE leading-[130%];
+  .overlay {
+    @apply bg-[#171D1B]/[16%] size-full absolute top-0 left-0;
   }
 }
