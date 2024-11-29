@@ -15,6 +15,7 @@ module.exports = {
         SURFACE_CONTAINER_HIGH: '#E3EAE6',
         OUTLINE_VAR: '#BEC9C5',
         OUTLINE: '#6F7976',
+        IMG_BG: '#171D1B',
 
         background: 'hsl(var(--background))',
         foreground: 'hsl(var(--foreground))',

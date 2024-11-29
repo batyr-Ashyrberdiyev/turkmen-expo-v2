@@ -6,7 +6,7 @@ export const Events = () => {
     <div>
       <PageHero title="Ближайшие мероприятия" img="/events-header.png" />
 
-      <Container className="flex flex-col gap-16 mt-16 mb-5">
+      <Container className="flex flex-col gap-16 mt-16">
         <p className="max-w-[908px] mx-auto text-center h4">
           Ознакомьтесь с расписанием предстоящих выставок и деловых встреч от Turkmen Expo. Здесь вы
           найдёте информацию о ключевых событиях, которые создают возможности для нового

@@ -39,7 +39,7 @@
   }
 
   .h2 {
-    @apply text-[40px] leading-[120%] font-medium;
+    @apply text-[40px] leading-[48px] font-medium;
   }
 
   .h3 {
@@ -52,6 +52,14 @@
 
   .h5 {
     @apply text-[12px] leading-[140%] font-medium text-ON_SURFACE_VAR;
+  }
+
+  .text-18 {
+    @apply text-[18px] leading-6 text-ON_SURFACE_VAR;
+  }
+
+  .text-28 {
+    @apply text-[28px] leading-9 font-normal;
   }
 
   .position-center {

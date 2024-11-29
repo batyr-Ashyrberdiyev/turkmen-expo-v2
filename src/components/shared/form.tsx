@@ -9,6 +9,7 @@ import { Button } from '../ui/button';
 
 interface Props {
   className?: string;
+  description?: boolean;
 }
 
 const formSchema = z.object({
@@ -19,7 +20,7 @@ const formSchema = z.object({
 
 type FormType = z.infer<typeof formSchema>;
 
-export const ContactsForm: FC<Props> = ({ className }) => {
+export const ContactsForm: FC<Props> = ({ className = 'mx-auto', description = true }) => {
   const form = useForm<FormType>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -34,15 +35,17 @@ export const ContactsForm: FC<Props> = ({ className }) => {
   };
 
   return (
-    <div className={cn(className, 'w-[628px] mx-auto')}>
-      <div className="flex flex-col gap-2 text-center mb-8">
-        <h3 className="h3 !text-ON_SURFACE">Давайте сотрудничать</h3>
-        <p className="h4">
-          Свяжитесь с нами прямо сейчас, чтобы обсудить возможности сотрудничества для повышения
-          вашего авторитета в отрасли - будь то выступления, партнерство или участие в наших
-          мероприятиях.
-        </p>
-      </div>
+    <div className={cn(className, 'w-[628px]')}>
+      {description && (
+        <div className="flex flex-col gap-2 text-center mb-8">
+          <h3 className="h3 !text-ON_SURFACE">Давайте сотрудничать</h3>
+          <p className="h4">
+            Свяжитесь с нами прямо сейчас, чтобы обсудить возможности сотрудничества для повышения
+            вашего авторитета в отрасли - будь то выступления, партнерство или участие в наших
+            мероприятиях.
+          </p>
+        </div>
+      )}
       <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)}>
           <div className="flex gap-8 mb-4">

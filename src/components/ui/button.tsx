@@ -5,16 +5,17 @@ import { cva, type VariantProps } from 'class-variance-authority';
 import { cn } from '@/lib/utils';
 
 const buttonVariants = cva(
-  'inline-flex items-center font-semibold justify-center gap-2 whitespace-nowrap text-[14px] leading-[130%] rounded-[2px] transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0',
+  'inline-flex items-center disabled:text-white font-semibold justify-center gap-2 transition-all whitespace-nowrap text-[14px] leading-[130%] rounded-[2px]  focus-visible:outline-none focus-visible:ring-1 disabled:opacity-50 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0',
   {
     variants: {
       variant: {
-        default: 'bg-SECONDARY text-white hover:bg-SECONDARY/90 min-h-12',
+        default:
+          'bg-SECONDARY disabled:text-ON_SURFACE/[38%] disabled:bg-ON_SURFACE/[12%] text-white hover:opacity-[92%] min-h-12',
         destructive: 'bg-destructive text-destructive-foreground shadow-sm hover:bg-destructive/90',
         outline: 'border text-PRIMARY border-OUTLINE bg-background',
-        transparent: 'text-PRIMARY min-h-11',
-        secondary: 'bg-secondary text-secondary-foreground shadow-sm hover:bg-secondary/80',
-        ghost: 'hover:bg-accent hover:text-accent-foreground',
+        transparent: 'text-PRIMARY min-h-11 hover:bg-PRIMARY/[8%]',
+        secondary: 'shadow-sm hover:bg-secondary/80',
+        ghost: 'bg-SECONDARY disabled:ON_SURAFACE/[38%] hover:opacity-[92%] text-white',
         link: 'text-primary underline-offset-4 hover:underline',
       },
       size: {

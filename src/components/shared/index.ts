@@ -4,6 +4,7 @@ export { Socials } from './socials';
 export { NewsCard } from './news-card';
 export { LangMenu } from './lang-menu';
 export { ArrowLink } from './arrow-link';
+export { MediaCard } from './media-card';
 export { EventCard } from './event-card';
 export { ContactsForm } from './form';
 export { ServicesBlock } from './services-block';
