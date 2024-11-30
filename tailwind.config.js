@@ -16,6 +16,7 @@ module.exports = {
         OUTLINE_VAR: '#BEC9C5',
         OUTLINE: '#6F7976',
         IMG_BG: '#171D1B',
+        ERROR: '#BA1A1A',
 
         background: 'hsl(var(--background))',
         foreground: 'hsl(var(--foreground))',

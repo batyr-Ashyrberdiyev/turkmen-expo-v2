@@ -44,9 +44,17 @@ export const Field: FC<Props> = ({
           </FormLabel>
           <FormControl>
             {!area ? (
-              <Input className="mb-1" placeholder={placeholder} {...field} />
+              <Input
+                className={cn('mb-1', error && 'ring-ERROR')}
+                placeholder={placeholder}
+                {...field}
+              />
             ) : (
-              <Textarea className="mb-1" placeholder={placeholder} {...field} />
+              <Textarea
+                className={cn('mb-1', error && 'ring-ERROR')}
+                placeholder={placeholder}
+                {...field}
+              />
             )}
           </FormControl>
           <FormMessage className="!text-red-600 h5" />

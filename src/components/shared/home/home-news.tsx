@@ -14,10 +14,10 @@ const HomeNews: FC<Props> = ({ className }) => {
         <SectionHeader title="Новости" linkText="лента новостей" />
 
         <div className="grid grid-cols-4  gap-8">
-          <NewsCard />
-          <NewsCard />
-          <NewsCard />
-          <NewsCard />
+          <NewsCard id="0" />
+          <NewsCard id="1" />
+          <NewsCard id="2" />
+          <NewsCard id="3" />
         </div>
       </Container>
     </section>

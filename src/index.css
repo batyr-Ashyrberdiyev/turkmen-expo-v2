@@ -43,7 +43,7 @@
   }
 
   .h3 {
-    @apply text-[24px] leading-[130%] font-medium text-ON_SURFACE_VAR;
+    @apply text-[24px] leading-8 font-medium text-ON_SURFACE_VAR;
   }
 
   .h4 {
@@ -51,7 +51,7 @@
   }
 
   .h5 {
-    @apply text-[12px] leading-[140%] font-medium text-ON_SURFACE_VAR;
+    @apply text-[12px] leading-5 font-medium text-ON_SURFACE_VAR;
   }
 
   .text-18 {
@@ -68,5 +68,13 @@
 
   .overlay {
     @apply bg-[#171D1B]/[16%] size-full absolute top-0 left-0;
+  }
+
+  .grid-4 {
+    @apply grid grid-cols-4 gap-8;
+  }
+
+  .card-shadow {
+    filter: drop-shadow();
   }
 }

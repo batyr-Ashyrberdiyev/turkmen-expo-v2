@@ -1,7 +1,7 @@
-import { FC, useState } from "react";
-import { Popover, PopoverContent, PopoverTrigger } from "../ui/popover";
-import { LangsE, LangsTitleE, LangStore } from "@/store/language";
-import { cn } from "@/lib/utils";
+import { FC, useState } from 'react';
+import { Popover, PopoverContent, PopoverTrigger } from '../ui/popover';
+import { LangsE, LangsTitleE, LangStore } from '@/store/language';
+import { cn } from '@/lib/utils';
 
 const langData = [
   {
@@ -31,19 +31,12 @@ export const LangMenu: FC<Props> = ({ className }) => {
   return (
     <Popover modal={false} open={open} onOpenChange={() => setOpen(!open)}>
       <PopoverTrigger
-        className={cn(
-          className,
-          "flex items-center font-semibold gap-2 w-[100px]"
-        )}
-      >
+        className={cn(className, 'flex items-center font-semibold gap-2 h-12 w-[100px]')}>
         <h4>{lang.title}</h4>
-        <img
-          src="/chevron-down.svg"
-          className={cn("transition-all", open && "rotate-180")}
-        />
+        <img src="/chevron-down.svg" className={cn('transition-all', open && 'rotate-180')} />
       </PopoverTrigger>
 
-      <PopoverContent className="flex flex-col w-fit text-left p-0 rounded-[8px]">
+      <PopoverContent className="flex flex-col w-fit text-left p-0 drop-shadow-lg py-1">
         {langData
           .filter((item) => item.id !== lang.id)
           .map((item) => (
@@ -52,8 +45,7 @@ export const LangMenu: FC<Props> = ({ className }) => {
                 setLang(item);
                 setOpen(false);
               }}
-              className="text-ON_SURFACE py-3 px-5 font-semibold"
-            >
+              className="text-ON_SURFACE text-left hover:bg-IMG_BG/[8%] transition-all origin-right text-[12px] py-2.5 leading-5 px-5 font-medium w-[112px]">
               {item.title}
             </button>
           ))}

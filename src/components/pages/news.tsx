@@ -16,10 +16,10 @@ export const News = () => {
       <section className="flex flex-col gap-12 items-center mb-[120px]">
         <div className="grid grid-cols-4 gap-8">
           {[...Array(12)].map((_, i) => (
-            <NewsCard key={i} />
+            <NewsCard id={String(i)} key={i} />
           ))}
         </div>
-        <Button variant={'outline'} className="">
+        <Button variant={'outline'} className="btn">
           Показать больше новостей
         </Button>
       </section>

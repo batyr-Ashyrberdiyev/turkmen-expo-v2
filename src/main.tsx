@@ -5,6 +5,7 @@ import { About, Contacts, Events, Home, Media, News, Services } from './componen
 
 import App from './App.tsx';
 import './index.css';
+import { NewsInner } from './components/pages/news-inner.tsx';
 
 const router = createBrowserRouter([
   {
@@ -27,6 +28,10 @@ const router = createBrowserRouter([
       {
         path: 'news',
         element: <News />,
+      },
+      {
+        path: 'news/:id',
+        element: <NewsInner />,
       },
       {
         path: 'events',

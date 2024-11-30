@@ -1,17 +1,30 @@
-import { Outlet } from "react-router-dom";
-import { Footer, Header } from "./components/layout";
+import { Outlet } from 'react-router-dom';
+import { Footer, Header } from './components/layout';
+
+import { ReactLenis } from '@studio-freight/react-lenis';
 
 function App() {
   return (
-    <main className="flex flex-col min-h-screen">
-      <Header />
+    <ReactLenis
+      root
+      options={{
+        lerp: 0.08,
+        duration: 3,
+        easing: (t) => Math.min(1, 1.005 - Math.pow(4, -5 * t)),
 
-      <div className="flex-auto pb-[120px]">
-        <Outlet />
-      </div>
+        touchMultiplier: 2,
+        infinite: false,
+      }}>
+      <main className="flex flex-col min-h-screen">
+        <Header />
 
-      <Footer />
-    </main>
+        <div className="flex-auto pb-[120px]">
+          <Outlet />
+        </div>
+
+        <Footer />
+      </main>
+    </ReactLenis>
   );
 }
 
