@@ -1,7 +1,7 @@
-import { FC } from "react";
-import { cn } from "@/lib/utils";
-import { Container, SectionHeader } from "@/components/layout";
-import { EventCard } from "../";
+import { FC } from 'react';
+import { cn } from '@/lib/utils';
+import { Container, SectionHeader } from '@/components/layout';
+import { Animate, EventCard } from '../';
 
 interface Props {
   className?: string;
@@ -9,15 +9,17 @@ interface Props {
 
 export const HomeEvents: FC<Props> = ({ className }) => {
   return (
-    <section className={cn(className, "")}>
-      <Container>
-        <SectionHeader title="Ближайшие события" linkText="все события" />
+    <Animate>
+      <section className={cn(className, '')}>
+        <Container>
+          <SectionHeader title="Ближайшие события" linkText="все события" />
 
-        <div className="flex flex-col gap-8">
-          <EventCard />
-          <EventCard />
-        </div>
-      </Container>
-    </section>
+          <div className="flex flex-col gap-8">
+            <EventCard />
+            <EventCard />
+          </div>
+        </Container>
+      </section>
+    </Animate>
   );
 };

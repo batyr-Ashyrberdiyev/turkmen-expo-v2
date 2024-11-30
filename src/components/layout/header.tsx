@@ -2,7 +2,8 @@ import { FC } from 'react';
 import { Container } from './container';
 import { Link, useLocation } from 'react-router-dom';
 import { cn } from '@/lib/utils';
-import { LangMenu, Logo, Socials } from '../shared';
+import { Animate, LangMenu, Logo, Socials } from '../shared';
+import { motion } from 'framer-motion';
 
 interface Props {
   className?: string;
@@ -39,31 +40,33 @@ export const Header: FC<Props> = ({ className }) => {
   const { pathname } = useLocation();
 
   return (
-    <header className={cn('bg-SURFACE_CONTAINER py-4', className)}>
-      <Container className="flex justify-between items-center">
-        <div className="flex items-center gap-4">
-          <div className="mb-1">
-            <Logo />
+    <Animate y={-10}>
+      <header className={cn('bg-SURFACE_CONTAINER py-4', className)}>
+        <Container className="flex justify-between items-center">
+          <div className="flex items-center gap-4">
+            <div className="mb-1">
+              <Logo />
+            </div>
+            <LangMenu />
           </div>
-          <LangMenu />
-        </div>
 
-        <nav className="flex items-center gap-4 font-semibold text-[14px]">
-          {navData.map((item) => (
-            <Link
-              className={cn(
-                'hover:text-SECONDARY transition-all',
-                pathname === item.link && '!text-PRIMARY cursor-default',
-              )}
-              key={item.title}
-              to={item.link}>
-              {item.title}
-            </Link>
-          ))}
-        </nav>
+          <nav className="flex items-center gap-4 font-semibold text-[14px]">
+            {navData.map((item) => (
+              <Link
+                className={cn(
+                  'hover:text-SECONDARY transition-all',
+                  pathname === item.link && '!text-PRIMARY cursor-default',
+                )}
+                key={item.title}
+                to={item.link}>
+                {item.title}
+              </Link>
+            ))}
+          </nav>
 
-        <Socials />
-      </Container>
-    </header>
+          <Socials />
+        </Container>
+      </header>
+    </Animate>
   );
 };

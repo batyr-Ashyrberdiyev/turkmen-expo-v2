@@ -1,6 +1,7 @@
 export { Logo } from './logo';
 export { Field } from './field';
 export { Socials } from './socials';
+export { Animate } from './animate';
 export { NewsCard } from './news-card';
 export { LangMenu } from './lang-menu';
 export { ArrowLink } from './arrow-link';
