@@ -1,12 +1,15 @@
 import { FC } from 'react';
 import { Container, PageHero } from '../layout';
 import { ContactsForm } from '../shared';
+import { scrollTop } from '@/lib/utils';
 
 interface Props {
   className?: string;
 }
 
 export const About: FC<Props> = ({ className }) => {
+  scrollTop();
+
   return (
     <div className={className}>
       <PageHero img="/about-header.png" title="О компании" className="mb-16" />

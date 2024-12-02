@@ -70,7 +70,7 @@ export const ContactsForm: FC<Props> = ({ className = 'mx-auto', description = t
           <Field
             control={form.control}
             name="message"
-            placeholder="francesco.dalaveli@gmail.com"
+            placeholder="Сообщение"
             label="Эл. почта"
             error={form.formState.errors.message}
             description="Оставьте ваш вопрос или пожелание"

@@ -1,3 +1,4 @@
+import { scrollTop } from '@/lib/utils';
 import { Container, PageHero } from '../layout';
 import { ContactsForm, ServicesBlock } from '../shared';
 
@@ -9,6 +10,8 @@ const list = [
 ];
 
 export const Services = () => {
+  scrollTop();
+
   return (
     <div>
       <PageHero

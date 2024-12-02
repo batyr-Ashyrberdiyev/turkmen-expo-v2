@@ -1,7 +1,10 @@
+import { scrollTop } from '@/lib/utils';
 import { Container, PageHero } from '../layout';
 import { MediaCard } from '../shared';
 
 export const Media = () => {
+  scrollTop();
+
   return (
     <div>
       <PageHero title="Медиа" img="/media-header.png" />

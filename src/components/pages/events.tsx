@@ -1,7 +1,10 @@
+import { scrollTop } from '@/lib/utils';
 import { Container, PageHero } from '../layout';
 import { EventCard } from '../shared';
 
 export const Events = () => {
+  scrollTop();
+
   return (
     <div>
       <PageHero title="Ближайшие мероприятия" img="/events-header.png" />

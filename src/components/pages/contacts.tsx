@@ -2,8 +2,11 @@ import { Mail, MapPin, Phone } from 'lucide-react';
 import { Container, PageHero } from '../layout';
 import { ContactsForm, Socials } from '../shared';
 import { Button } from '../ui/button';
+import { scrollTop } from '@/lib/utils';
 
 export const Contacts = () => {
+  scrollTop();
+
   return (
     <div>
       <PageHero title="Свяжитесь с нами" img="/contacts-header.png" className="mb-16" />

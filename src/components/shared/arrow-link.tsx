@@ -15,7 +15,7 @@ export const ArrowLink: FC<Props> = ({ className, linkText, link = '' }) => {
       to={link}
       className={cn('flex font-semibold h-12 items-center group gap-2 text-PRIMARY', className)}>
       {linkText}
-      <ArrowRight className="group-hover:translate-x-1 animate-pulse ease-out transition-all duration-400" />
+      <ArrowRight className="group-hover:translate-x-1 ease-out transition-all duration-1000" />
     </Link>
   );
 };

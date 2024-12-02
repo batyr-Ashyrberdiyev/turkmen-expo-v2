@@ -1,8 +1,11 @@
 import { useParams } from 'react-router-dom';
 import { Container } from '../layout';
 import { NewsCard } from '../shared';
+import { scrollTop } from '@/lib/utils';
 
 export const NewsInner = () => {
+  scrollTop();
+
   const { id } = useParams();
 
   return (

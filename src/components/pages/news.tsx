@@ -1,8 +1,11 @@
+import { scrollTop } from '@/lib/utils';
 import { Container } from '../layout';
 import { ContactsForm, NewsCard } from '../shared';
 import { Button } from '../ui/button';
 
 export const News = () => {
+  scrollTop();
+
   return (
     <Container className="pt-20">
       <div className="mb-16">
