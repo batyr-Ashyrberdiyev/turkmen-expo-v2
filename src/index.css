@@ -75,6 +75,6 @@
   }
 
   .card-shadow {
-    filter: drop-shadow();
+    @apply hover:drop-shadow-sm hover:shadow-md transition-shadow;
   }
 }

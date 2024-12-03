@@ -12,11 +12,12 @@ export const HomeEvents: FC<Props> = ({ className }) => {
     <Animate>
       <section className={cn(className, '')}>
         <Container>
-          <SectionHeader title="Ближайшие события" linkText="все события" />
+          <SectionHeader title="Ближайшие события" linkText="все события" link="/events" />
 
           <div className="flex flex-col gap-8">
-            <EventCard />
-            <EventCard />
+            {[...Array(2)].map((_, i) => (
+              <EventCard i={i} />
+            ))}
           </div>
         </Container>
       </section>

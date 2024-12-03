@@ -8,7 +8,14 @@ interface Props {
 
 export const HomeHero: FC<Props> = ({ className }) => {
   return (
-    <Animate>
+    <Animate
+      initial={{
+        y: 120,
+      }}
+      inView={{
+        y: 0,
+      }}
+      duration={0.5}>
       <section className={cn(className, 'relative h-[600px] w-full')}>
         <div className="absolute top-0 left-0 size-full bg-[#171D1B]/[16%] z-10" />
         <img src="/home-hero.png" className="absolute size-full object-cover" />

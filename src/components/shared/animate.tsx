@@ -7,15 +7,27 @@ interface Props {
   children: ReactNode;
   y?: number;
   duration?: number;
+  margin?: string;
+  delay?: number;
+  initial?: any;
+  inView?: any;
 }
 
-export const Animate: FC<Props> = ({ className, children, y = 20, duration = 0.4 }) => {
+export const Animate: FC<Props> = ({
+  className,
+  children,
+  duration = 0.4,
+  margin = '-10px',
+  delay = 0,
+  initial = {},
+  inView = {},
+}) => {
   return (
     <motion.div
-      initial={{ translateY: y, opacity: 0 }}
-      whileInView={{ translateY: 0, opacity: 1 }}
-      transition={{ ease: [0.55, 0, 0.1, 1], duration: duration }}
-      viewport={{ once: true }}
+      initial={{ opacity: 0, ...initial }}
+      whileInView={{ opacity: 1, ...inView }}
+      transition={{ ease: 'circOut', duration: duration, delay: delay }}
+      viewport={{ once: true, margin: margin }}
       className={cn(className, '')}>
       {children}
     </motion.div>

@@ -2,17 +2,41 @@ import { FC } from 'react';
 import { cn } from '@/lib/utils';
 import { MapPinIcon } from 'lucide-react';
 import { Button } from '../ui/button';
+import { motion } from 'framer-motion';
 
 interface Props {
   className?: string;
+  i: number;
 }
 
-export const EventCard: FC<Props> = ({ className }) => {
+export const itemVariants = {
+  initial: {
+    opacity: 0,
+    y: 150,
+  },
+  animate: (i: number) => ({
+    opacity: 1,
+    y: 0,
+
+    transition: {
+      delay: 0.3 * i,
+      ease: [0.1, 0, 0.1, 1],
+      duration: 0.5,
+    },
+  }),
+};
+
+export const EventCard: FC<Props> = ({ className, i }) => {
   return (
-    <article
+    <motion.article
+      initial="initial"
+      whileInView="animate"
+      variants={itemVariants}
+      custom={i}
+      viewport={{ once: true }}
       className={cn(
         className,
-        'p-4 bg-SURFACE_CONTAINER border hover:shadow-md hover:bg-IMG_BG/[8%] transition-all border-CONTAINER_OUTLINE rounded-[4px] flex  gap-8',
+        'p-4 bg-SURFACE_CONTAINER border hover:drop-shadow-sm hover:shadow-md hover:bg-IMG_BG/[8%] transition-shadow border-CONTAINER_OUTLINE rounded-[4px] flex  gap-8',
       )}>
       <div>
         <h3 className="h3">22-24 августа</h3>
@@ -36,6 +60,6 @@ export const EventCard: FC<Props> = ({ className }) => {
         <Button variant={'ghost'}>Зарегистрироваться</Button>
         <Button variant="transparent">Перейти на сайт</Button>
       </div>
-    </article>
+    </motion.article>
   );
 };

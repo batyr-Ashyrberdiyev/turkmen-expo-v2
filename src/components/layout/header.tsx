@@ -3,7 +3,6 @@ import { Container } from './container';
 import { Link, useLocation } from 'react-router-dom';
 import { cn } from '@/lib/utils';
 import { Animate, LangMenu, Logo, Socials } from '../shared';
-import { motion } from 'framer-motion';
 
 interface Props {
   className?: string;
@@ -40,7 +39,7 @@ export const Header: FC<Props> = ({ className }) => {
   const { pathname } = useLocation();
 
   return (
-    <Animate y={-10}>
+    <Animate duration={0.3} delay={0.3}>
       <header className={cn('bg-SURFACE_CONTAINER py-4', className)}>
         <Container className="flex justify-between items-center">
           <div className="flex items-center gap-4">
