@@ -5,29 +5,30 @@ import { cn } from '@/lib/utils';
 interface Props {
   className?: string;
   children: ReactNode;
-  y?: number;
-  duration?: number;
-  margin?: string;
-  delay?: number;
-  initial?: any;
-  inView?: any;
 }
+export const globalItemVariants = {
+  initial: {
+    opacity: 0,
+    y: 50,
+  },
+  animate: () => ({
+    opacity: 1,
+    y: 0,
 
-export const Animate: FC<Props> = ({
-  className,
-  children,
-  duration = 0.4,
-  margin = '-10px',
-  delay = 0,
-  initial = {},
-  inView = {},
-}) => {
+    transition: {
+      ease: [0.1, 0, 0.2, 1],
+      duration: 0.5,
+    },
+  }),
+};
+
+export const Animate: FC<Props> = ({ className, children }) => {
   return (
     <motion.div
-      initial={{ opacity: 0, ...initial }}
-      whileInView={{ opacity: 1, ...inView }}
-      transition={{ ease: 'circOut', duration: duration, delay: delay }}
-      viewport={{ once: true, margin: margin }}
+      variants={globalItemVariants}
+      initial="initial"
+      whileInView="animate"
+      viewport={{ once: true }}
       className={cn(className, '')}>
       {children}
     </motion.div>

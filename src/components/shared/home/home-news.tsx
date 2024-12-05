@@ -1,13 +1,13 @@
 import { FC } from 'react';
 import { cn } from '@/lib/utils';
 import { Container, SectionHeader } from '@/components/layout';
-import { NewsCard } from '../';
+import { Animate, NewsCard } from '../';
 
 interface Props {
   className?: string;
 }
 
-const data = [
+export const newsData = [
   {
     img: '/news-img.png',
     title: 'Ашхабад готовится к международной конференции и выставке CIET-2024',
@@ -36,11 +36,11 @@ const HomeNews: FC<Props> = ({ className }) => {
       <Container>
         <SectionHeader title="Новости" linkText="лента новостей" link="/news" />
 
-        <div className="grid grid-cols-4 gap-8">
-          {data.map((item, i) => (
-            <NewsCard link={''} key={i} i={i} {...item} />
+        <Animate className="grid grid-cols-4 gap-8">
+          {newsData.map((item, i) => (
+            <NewsCard link={''} key={i} {...item} />
           ))}
-        </div>
+        </Animate>
       </Container>
     </section>
   );

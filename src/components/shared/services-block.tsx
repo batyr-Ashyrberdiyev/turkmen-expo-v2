@@ -1,4 +1,5 @@
 import { cn } from '@/lib/utils';
+import { motion } from 'framer-motion';
 import { FC } from 'react';
 
 interface Props {
@@ -9,7 +10,25 @@ interface Props {
   img: string;
   list: string[];
   reverse?: boolean;
+  i: number;
 }
+
+const itemVariants = {
+  initial: {
+    opacity: 0,
+    y: 50,
+  },
+  animate: (i: number) => ({
+    opacity: 1,
+    y: 0,
+
+    transition: {
+      delay: 0.3 * i,
+      ease: [0.1, 0, 0.2, 1],
+      duration: 0.3,
+    },
+  }),
+};
 
 export const ServicesBlock: FC<Props> = ({
   className,
@@ -18,10 +37,15 @@ export const ServicesBlock: FC<Props> = ({
   text,
   greenText,
   list,
+  i,
   reverse = false,
 }) => {
   return (
-    <section
+    <motion.section
+      variants={itemVariants}
+      initial="initial"
+      whileInView="animate"
+      custom={i}
       className={cn(
         className,
         'flex items-center gap-8 min-h-[353px]',
@@ -46,6 +70,6 @@ export const ServicesBlock: FC<Props> = ({
         <img src={img} alt="image" className="size-full object-cover rounded-[4px]" />
         <div className="overlay rounded-[4px]" />
       </div>
-    </section>
+    </motion.section>
   );
 };

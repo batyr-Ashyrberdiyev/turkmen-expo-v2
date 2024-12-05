@@ -18,8 +18,10 @@ export const Events = () => {
         </p>
 
         <section className="flex flex-col gap-8">
-          <EventCard />
-          <EventCard />
+          <EventCard i={0} />
+          <EventCard i={1} />
+          <EventCard i={2} />
+          <EventCard i={3} />
         </section>
       </Container>
     </div>

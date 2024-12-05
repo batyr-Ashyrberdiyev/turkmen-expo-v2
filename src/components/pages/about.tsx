@@ -1,6 +1,6 @@
 import { FC } from 'react';
 import { Container, PageHero } from '../layout';
-import { ContactsForm } from '../shared';
+import { Animate, ContactsForm } from '../shared';
 import { scrollTop } from '@/lib/utils';
 
 interface Props {
@@ -15,7 +15,7 @@ export const About: FC<Props> = ({ className }) => {
       <PageHero img="/about-header.png" title="О компании" className="mb-16" />
 
       <Container className="flex flex-col gap-[120px]">
-        <div className="flex gap-8">
+        <Animate className="flex gap-8">
           <div>
             <h2 className="h2 mb-[68px]">Кто мы?</h2>
 
@@ -49,9 +49,11 @@ export const About: FC<Props> = ({ className }) => {
               рубежом, в том{' '}
             </div>
           </div>
-        </div>
+        </Animate>
 
-        <ContactsForm />
+        <Animate>
+          <ContactsForm />
+        </Animate>
       </Container>
     </div>
   );

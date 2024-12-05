@@ -12,16 +12,16 @@ interface Props {
 export const itemVariants = {
   initial: {
     opacity: 0,
-    y: 150,
+    y: 50,
   },
   animate: (i: number) => ({
     opacity: 1,
     y: 0,
 
     transition: {
-      delay: 0.3 * i,
+      delay: i * 0.2,
       ease: [0.1, 0, 0.1, 1],
-      duration: 0.5,
+      duration: 0.3,
     },
   }),
 };
@@ -33,7 +33,7 @@ export const EventCard: FC<Props> = ({ className, i }) => {
       whileInView="animate"
       variants={itemVariants}
       custom={i}
-      viewport={{ once: true }}
+      viewport={{ once: true, amount: 0.01, margin: '130px' }}
       className={cn(
         className,
         'p-4 bg-SURFACE_CONTAINER border hover:drop-shadow-sm hover:shadow-md hover:bg-IMG_BG/[8%] transition-shadow border-CONTAINER_OUTLINE rounded-[4px] flex  gap-8',

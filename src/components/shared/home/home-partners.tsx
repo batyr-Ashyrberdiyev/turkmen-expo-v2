@@ -15,14 +15,14 @@ const HomePartners: FC<Props> = ({ className }) => {
       opacity: 0,
       y: 50,
     },
-    animate: (i: number) => ({
+    animate: () => ({
       opacity: 1,
       y: 0,
 
       transition: {
-        delay: 0.1 * i,
+        // delay: 0.1 * i,
         ease: [0.1, 0, 0.6, 1],
-        duration: 0.1,
+        duration: 0.6,
       },
     }),
   };
@@ -46,11 +46,10 @@ const HomePartners: FC<Props> = ({ className }) => {
                 variants={partnerVariants}
                 initial="initial"
                 whileInView="animate"
-                viewport={{ once: true }}
-                custom={i}>
-                <CarouselItem
-                  key={i}
-                  className="basis-[188px] mr-8 h-20 bg-SURFACE_CONTAINER border border-CONTAINER_OUTLINE radius-[4px] p-4">
+                viewport={{ once: true, amount: 0.2 }}
+                custom={i}
+                key={i}>
+                <CarouselItem className="basis-[188px] mr-8 h-20 bg-SURFACE_CONTAINER border border-CONTAINER_OUTLINE radius-[4px] p-4">
                   <img src="/partner.svg" className="size-full object-contain" />
                 </CarouselItem>
               </motion.div>

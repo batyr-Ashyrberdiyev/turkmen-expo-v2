@@ -34,7 +34,7 @@ export const SectionHeader: FC<Props> = ({ className, link = '', title, linkText
       initial="initial"
       whileInView="animate"
       variants={itemVariants}
-      viewport={{ once: true, amount: 0.05 }}
+      viewport={{ once: true, margin: '100px' }}
       className={cn(className, 'flex items-center justify-between mb-8')}>
       <h2 className="h2">{title}</h2>
 

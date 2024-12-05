@@ -41,6 +41,7 @@ export const LangMenu: FC<Props> = ({ className }) => {
           .filter((item) => item.id !== lang.id)
           .map((item) => (
             <button
+              key={item.id}
               onClick={() => {
                 setLang(item);
                 setOpen(false);

@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import { cn } from '@/lib/utils';
 import { Container, SectionHeader } from '@/components/layout';
-import { Animate, EventCard } from '../';
+import { EventCard } from '../';
 
 interface Props {
   className?: string;
@@ -9,18 +9,16 @@ interface Props {
 
 export const HomeEvents: FC<Props> = ({ className }) => {
   return (
-    <Animate>
-      <section className={cn(className, '')}>
-        <Container>
-          <SectionHeader title="Ближайшие события" linkText="все события" link="/events" />
+    <section className={cn(className, '')}>
+      <Container>
+        <SectionHeader title="Ближайшие события" linkText="все события" link="/events" />
 
-          <div className="flex flex-col gap-8">
-            {[...Array(2)].map((_, i) => (
-              <EventCard i={i} />
-            ))}
-          </div>
-        </Container>
-      </section>
-    </Animate>
+        <div className="flex flex-col gap-8">
+          {[...Array(2)].map((_, i) => (
+            <EventCard key={i} i={i} />
+          ))}
+        </div>
+      </Container>
+    </section>
   );
 };
