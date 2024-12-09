@@ -1,6 +1,6 @@
-import { FC, ReactNode } from 'react';
-import { motion } from 'framer-motion';
-import { cn } from '@/lib/utils';
+import { FC, ReactNode, useEffect } from "react";
+import { motion } from "framer-motion";
+import { cn } from "@/lib/utils";
 
 interface Props {
   className?: string;
@@ -29,7 +29,8 @@ export const Animate: FC<Props> = ({ className, children }) => {
       initial="initial"
       whileInView="animate"
       viewport={{ once: true }}
-      className={cn(className, '')}>
+      className={cn(className, "")}
+    >
       {children}
     </motion.div>
   );
