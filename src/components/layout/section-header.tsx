@@ -1,9 +1,9 @@
-import { FC } from 'react';
-import { cn } from '@/lib/utils';
-import { Link } from 'react-router-dom';
-import { ArrowRight } from 'lucide-react';
-import { Button } from '../ui/button';
-import { motion } from 'framer-motion';
+import { FC } from "react";
+import { cn } from "@/lib/utils";
+import { Link } from "react-router-dom";
+import { ArrowRight } from "lucide-react";
+import { Button } from "../ui/button";
+import { motion } from "framer-motion";
 
 interface Props {
   className?: string;
@@ -12,7 +12,12 @@ interface Props {
   linkText: string;
 }
 
-export const SectionHeader: FC<Props> = ({ className, link = '', title, linkText }) => {
+export const SectionHeader: FC<Props> = ({
+  className,
+  link = "",
+  title,
+  linkText,
+}) => {
   const itemVariants = {
     initial: {
       opacity: 0,
@@ -34,14 +39,19 @@ export const SectionHeader: FC<Props> = ({ className, link = '', title, linkText
       initial="initial"
       whileInView="animate"
       variants={itemVariants}
-      viewport={{ once: true, margin: '100px' }}
-      className={cn(className, 'flex items-center justify-between mb-8')}>
+      viewport={{ once: true, margin: "100px" }}
+      className={cn(
+        className,
+        "flex items-center justify-between md:mb-8 mb-6"
+      )}
+    >
       <h2 className="h2">{title}</h2>
 
       <Link to={link}>
         <Button
-          variant={'transparent'}
-          className="flex font-semibold h-12 items-center group gap-2 text-PRIMARY">
+          variant={"transparent"}
+          className="flex font-semibold h-12 items-center group gap-2 text-PRIMARY"
+        >
           {linkText}
           <ArrowRight />
         </Button>
