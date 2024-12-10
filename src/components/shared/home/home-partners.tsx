@@ -4,28 +4,17 @@ import { Container } from '@/components/layout';
 import { Carousel, CarouselContent, CarouselItem } from '@/components/ui/carousel';
 import { motion } from 'framer-motion';
 import { itemVariants } from '../event-card';
+import { Animate } from '../animate';
+import { useMediaQuery } from 'usehooks-ts';
 
 interface Props {
   className?: string;
 }
 
 const HomePartners: FC<Props> = ({ className }) => {
-  const partnerVariants = {
-    initial: {
-      opacity: 0,
-      y: 50,
-    },
-    animate: () => ({
-      opacity: 1,
-      y: 0,
+  const tab = useMediaQuery('(min-width: 768px)');
 
-      transition: {
-        // delay: 0.1 * i,
-        ease: [0.1, 0, 0.6, 1],
-        duration: 0.6,
-      },
-    }),
-  };
+  console.log(tab);
 
   return (
     <section className={cn(className, '')}>
@@ -39,23 +28,22 @@ const HomePartners: FC<Props> = ({ className }) => {
           Наши партнёры
         </motion.h2>
 
-        <Carousel>
-          <CarouselContent>
-            {[...Array(6)].map((_, i) => (
-              <motion.div
-                variants={partnerVariants}
-                initial="initial"
-                whileInView="animate"
-                viewport={{ once: true, amount: 0.2 }}
-                custom={i}
-                key={i}>
-                <CarouselItem className="basis-[188px] mr-8 h-20 bg-SURFACE_CONTAINER border border-CONTAINER_OUTLINE radius-[4px] p-4">
+        <Animate>
+          <Carousel
+            opts={{
+              dragFree: true,
+            }}>
+            <CarouselContent overflowHidden={!tab}>
+              {[...Array(8)].map((_, i) => (
+                <CarouselItem
+                  key={i}
+                  className="basis-[188px] md:mr-8 mr-4 h-20 bg-SURFACE_CONTAINER border border-CONTAINER_OUTLINE radius-[4px] p-4">
                   <img src="/partner.svg" className="size-full object-contain" />
                 </CarouselItem>
-              </motion.div>
-            ))}
-          </CarouselContent>
-        </Carousel>
+              ))}
+            </CarouselContent>
+          </Carousel>
+        </Animate>
       </Container>
     </section>
   );

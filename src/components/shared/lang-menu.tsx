@@ -3,7 +3,7 @@ import { Popover, PopoverContent, PopoverTrigger } from '../ui/popover';
 import { LangsE, LangsTitleE, LangStore } from '@/store/language';
 import { cn } from '@/lib/utils';
 
-const langData = [
+export const langData = [
   {
     title: LangsTitleE.RU,
     id: LangsE.RU,

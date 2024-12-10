@@ -1,7 +1,7 @@
-import { Outlet } from "react-router-dom";
-import { Footer, Header } from "./components/layout";
+import { Outlet } from 'react-router-dom';
+import { Footer, Header } from './components/layout';
 
-import { ReactLenis } from "@studio-freight/react-lenis";
+import { ReactLenis } from '@studio-freight/react-lenis';
 
 function App() {
   return (
@@ -14,12 +14,11 @@ function App() {
 
         touchMultiplier: 2,
         infinite: false,
-      }}
-    >
+      }}>
       <main className="flex flex-col h-full wrapper overflow-y-hidden">
         <Header />
 
-        <div className="flex-auto pb-[120px]">
+        <div className="flex-auto md:pb-[120px] pb-20">
           <Outlet />
         </div>
 

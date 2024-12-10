@@ -3,24 +3,24 @@
 @tailwind utilities;
 
 @font-face {
-  font-family: "Gilroy";
+  font-family: 'Gilroy';
   font-style: normal;
   font-weight: 400;
-  src: local("Gilroy"), url("/fonts/Gilroy-Regular.woff2") format("woff2");
+  src: local('Gilroy'), url('/fonts/Gilroy-Regular.woff2') format('woff2');
 }
 
 @font-face {
-  font-family: "Gilroy";
+  font-family: 'Gilroy';
   font-style: normal;
   font-weight: 500;
-  src: local("Gilroy"), url("/fonts/Gilroy-Medium.woff2") format("woff2");
+  src: local('Gilroy'), url('/fonts/Gilroy-Medium.woff2') format('woff2');
 }
 
 @font-face {
-  font-family: "Gilroy";
+  font-family: 'Gilroy';
   font-style: normal;
   font-weight: 600;
-  src: local("Gilroy"), url("/fonts/Gilroy-Semibold.woff2") format("woff2");
+  src: local('Gilroy'), url('/fonts/Gilroy-Semibold.woff2') format('woff2');
 }
 
 @layer base {

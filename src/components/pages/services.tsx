@@ -24,6 +24,20 @@ const events = [
     list: list,
     text: '«Туркмен Экспо» – лидер с опытом 20 лет в области организации и проведения выставок, массовых мероприятий, конференций и деловых форумов, в том числе международных. Мы сотрудничаем с одной из самых крупных и престижных выставочных площадок мира.',
   },
+  {
+    title: 'Организация выставок',
+    img: '/services-1.png',
+    greenText: 'В распоряжении наших клиентов:',
+    list: list,
+    text: '«Туркмен Экспо» – лидер с опытом 20 лет в области организации и проведения выставок, массовых мероприятий, конференций и деловых форумов, в том числе международных. Мы сотрудничаем с одной из самых крупных и престижных выставочных площадок мира.',
+  },
+  {
+    title: 'Организация выставок',
+    img: '/services-1.png',
+    greenText: 'В распоряжении наших клиентов:',
+    list: list,
+    text: '«Туркмен Экспо» – лидер с опытом 20 лет в области организации и проведения выставок, массовых мероприятий, конференций и деловых форумов, в том числе международных. Мы сотрудничаем с одной из самых крупных и престижных выставочных площадок мира.',
+  },
 ];
 
 export const Services = () => {
@@ -36,18 +50,24 @@ export const Services = () => {
         title="Наши услуги для успешной презентации вашего бизнеса"
       />
 
-      <Container className="flex flex-col gap-[120px] mt-16">
-        <div className="flex flex-col gap-8">
-          {events.map((item, i) => (
-            <>
-              <ServicesBlock key={i} i={i} {...item} reverse={i % 2 === 0} />
-              {i + 1 !== events.length && <hr className="border-OUTLINE_VAR" />}
-            </>
-          ))}
-        </div>
+      <div className="bg-SURFACE_CONTAINER">
+        <Container className="flex flex-col gap-[120px] py-16">
+          <div className="flex flex-col md:gap-8 gap-6">
+            {events.map((item, i) => (
+              <div key={i}>
+                <ServicesBlock i={i} {...item} reverse={i % 2 === 0} />
+                {i + 1 !== events.length && <hr className="border-OUTLINE_VAR" />}
+              </div>
+            ))}
+          </div>
+        </Container>
+      </div>
 
-        <ContactsForm />
-      </Container>
+      <div className="bg-SURFACE md:mt-[120px] mt-20">
+        <Container>
+          <ContactsForm />
+        </Container>
+      </div>
     </div>
   );
 };

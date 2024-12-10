@@ -2,7 +2,7 @@ import { FC } from 'react';
 import { cn } from '@/lib/utils';
 import { MapPinIcon } from 'lucide-react';
 import { Button } from '../ui/button';
-import { motion } from 'framer-motion';
+import { Animate } from './animate';
 
 interface Props {
   className?: string;
@@ -26,17 +26,12 @@ export const itemVariants = {
   }),
 };
 
-export const EventCard: FC<Props> = ({ className, i }) => {
+export const EventCard: FC<Props> = ({ className }) => {
   return (
-    <motion.article
-      initial="initial"
-      whileInView="animate"
-      variants={itemVariants}
-      custom={i}
-      viewport={{ once: true, margin: '10px' }}
+    <article
       className={cn(
         className,
-        'p-4 bg-SURFACE_CONTAINER border hover:drop-shadow-sm hover:shadow-md hover:bg-IMG_BG/[8%] transition-shadow border-CONTAINER_OUTLINE rounded-[4px] ',
+        'p-4 bg-SURFACE_CONTAINER border hover:drop-shadow-sm hover:shadow-md hover:bg-IMG_BG/[8%] transition-all border-CONTAINER_OUTLINE rounded-[4px]',
       )}>
       <div className="md:flex hidden gap-8">
         <div>
@@ -86,6 +81,6 @@ export const EventCard: FC<Props> = ({ className, i }) => {
         <Button variant={'ghost'}>Зарегистрироваться</Button>
         <Button variant="transparent">Перейти на сайт</Button>
       </div>
-    </motion.article>
+    </article>
   );
 };

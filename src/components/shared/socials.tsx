@@ -19,9 +19,9 @@ const socials = [
   },
 ];
 
-export const Socials: FC<Props> = ({}) => {
+export const Socials: FC<Props> = ({ className }) => {
   return (
-    <div className="flex items-center">
+    <div className={cn('flex items-center', className)}>
       {socials.map(({ url }, i) => (
         <a key={i} className="cursor-pointer">
           <img src={url} />

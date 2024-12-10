@@ -35,11 +35,11 @@ export const ContactsForm: FC<Props> = ({ className = 'mx-auto', description = t
   };
 
   return (
-    <div className={cn(className, 'w-[628px]')}>
+    <div className={cn(className, 'max-w-[628px]')}>
       {description && (
-        <div className="flex flex-col gap-2 text-center mb-8">
+        <div className="flex flex-col md:gap-2 gap-4 text-center mb-8">
           <h3 className="h3 !text-ON_SURFACE">Давайте сотрудничать</h3>
-          <p className="h4">
+          <p className="text-base">
             Свяжитесь с нами прямо сейчас, чтобы обсудить возможности сотрудничества для повышения
             вашего авторитета в отрасли - будь то выступления, партнерство или участие в наших
             мероприятиях.
@@ -48,7 +48,7 @@ export const ContactsForm: FC<Props> = ({ className = 'mx-auto', description = t
       )}
       <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)}>
-          <div className="flex gap-8 mb-4">
+          <div className="flex flex-col md:flex-row md:gap-8 gap-6 mb-4">
             <Field
               control={form.control}
               name="name"
@@ -77,7 +77,9 @@ export const ContactsForm: FC<Props> = ({ className = 'mx-auto', description = t
             area
           />
 
-          <Button className="bg-PRIMARY w-full mt-4 rounded-[4px] text-white">Отправить</Button>
+          <Button className="bg-PRIMARY w-full md:mt-4 mt-6 rounded-[4px] text-white">
+            Отправить
+          </Button>
         </form>
       </Form>
     </div>

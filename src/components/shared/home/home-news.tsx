@@ -56,7 +56,7 @@ const HomeNews: FC<Props> = ({ className }) => {
       <Container>
         <SectionHeader title="Новости" linkText="лента новостей" link="/news" />
 
-        <Animate className="grid grid-cols-4 gap-8">
+        <Animate className="grid md:grid-cols-4 grid-cols-1 md:gap-8 gap-6">
           {newsData.slice(0, 4).map((item, i) => (
             <NewsCard link={''} key={i} {...item} />
           ))}

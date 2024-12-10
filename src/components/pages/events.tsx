@@ -1,6 +1,6 @@
 import { scrollTop } from '@/lib/utils';
 import { Container, PageHero } from '../layout';
-import { EventCard } from '../shared';
+import { Animate, EventCard } from '../shared';
 
 export const Events = () => {
   scrollTop();
@@ -10,18 +10,19 @@ export const Events = () => {
       <PageHero title="Ближайшие мероприятия" img="/events-header.png" />
 
       <Container className="flex flex-col gap-16 mt-16">
-        <p className="max-w-[908px] mx-auto text-center h4">
-          Ознакомьтесь с расписанием предстоящих выставок и деловых встреч от Turkmen Expo. Здесь вы
-          найдёте информацию о ключевых событиях, которые создают возможности для нового
-          партнёрства, обмена знаниями и продвижения бизнеса. Следите за обновлениями и планируйте
-          участие в самых значимых мероприятиях индустрии!
-        </p>
+        <Animate>
+          <p className="max-w-[908px] mx-auto text-base">
+            Ознакомьтесь с расписанием предстоящих выставок и деловых встреч от Turkmen Expo. Здесь
+            вы найдёте информацию о ключевых событиях, которые создают возможности для нового
+            партнёрства, обмена знаниями и продвижения бизнеса. Следите за обновлениями и планируйте
+            участие в самых значимых мероприятиях индустрии!
+          </p>
+        </Animate>
 
-        <section className="flex flex-col gap-8">
-          <EventCard i={0} />
-          <EventCard i={1} />
-          <EventCard i={2} />
-          <EventCard i={3} />
+        <section className="flex flex-col md:gap-8 gap-6">
+          <Animate>
+            <EventCard i={0} />
+          </Animate>
         </section>
       </Container>
     </div>
