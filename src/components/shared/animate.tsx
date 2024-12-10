@@ -5,6 +5,7 @@ import { cn } from '@/lib/utils';
 interface Props {
   className?: string;
   children: ReactNode;
+  margin?: string;
 }
 export const globalItemVariants = {
   initial: {
@@ -22,13 +23,13 @@ export const globalItemVariants = {
   }),
 };
 
-export const Animate: FC<Props> = ({ className, children }) => {
+export const Animate: FC<Props> = ({ className, children, margin = '0px' }) => {
   return (
     <motion.div
       variants={globalItemVariants}
       initial="initial"
       whileInView="animate"
-      viewport={{ once: true }}
+      viewport={{ once: true, margin: margin }}
       className={cn(className, '')}>
       {children}
     </motion.div>

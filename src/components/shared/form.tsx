@@ -6,8 +6,6 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { Field } from './';
 import { cn } from '@/lib/utils';
 import { Button } from '../ui/button';
-import { motion } from 'framer-motion';
-import { globalItemVariants } from './news-card';
 
 interface Props {
   className?: string;
@@ -37,12 +35,7 @@ export const ContactsForm: FC<Props> = ({ className = 'mx-auto', description = t
   };
 
   return (
-    <motion.div
-      // variants={globalItemVariants}
-      // initial="initial"
-      // whileInView="whileInView"
-      // viewport={{ once: true }}
-      className={cn(className, 'w-[628px]')}>
+    <div className={cn(className, 'w-[628px]')}>
       {description && (
         <div className="flex flex-col gap-2 text-center mb-8">
           <h3 className="h3 !text-ON_SURFACE">Давайте сотрудничать</h3>
@@ -87,6 +80,6 @@ export const ContactsForm: FC<Props> = ({ className = 'mx-auto', description = t
           <Button className="bg-PRIMARY w-full mt-4 rounded-[4px] text-white">Отправить</Button>
         </form>
       </Form>
-    </motion.div>
+    </div>
   );
 };

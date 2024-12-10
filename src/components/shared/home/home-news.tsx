@@ -28,6 +28,26 @@ export const newsData = [
     title: 'Ашхабад готовится к международной конференции и выставке CIET-2024',
     id: '1',
   },
+  {
+    img: '/news-img.png',
+    title: 'Ашхабад готовится к международной конференции и выставке CIET-2024',
+    id: '1',
+  },
+  {
+    img: '/news-img.png',
+    title: 'Ашхабад готовится к международной конференции и выставке CIET-2024',
+    id: '1',
+  },
+  {
+    img: '/news-img.png',
+    title: 'Ашхабад готовится к международной конференции и выставке CIET-2024',
+    id: '1',
+  },
+  {
+    img: '/news-img.png',
+    title: 'Ашхабад готовится к международной конференции и выставке CIET-2024',
+    id: '1',
+  },
 ];
 
 const HomeNews: FC<Props> = ({ className }) => {
@@ -37,7 +57,7 @@ const HomeNews: FC<Props> = ({ className }) => {
         <SectionHeader title="Новости" linkText="лента новостей" link="/news" />
 
         <Animate className="grid grid-cols-4 gap-8">
-          {newsData.map((item, i) => (
+          {newsData.slice(0, 4).map((item, i) => (
             <NewsCard link={''} key={i} {...item} />
           ))}
         </Animate>
