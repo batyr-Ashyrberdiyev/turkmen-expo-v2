@@ -1,13 +1,12 @@
-import { FC, useState } from 'react';
+import { FC } from 'react';
 import { Container } from './container';
 import { Link, useLocation } from 'react-router-dom';
 import { cn } from '@/lib/utils';
-import { Animate, Burger, LangMenu, Logo, Socials } from '../shared';
+import { Animate, Burger, LangMenu, Logo, Socials, Gallery } from '../shared';
 import { MenuIcon, X } from 'lucide-react';
 import { AnimatePresence } from 'framer-motion';
-import { Gallery } from '../shared/gallery';
-import { useScrollLock } from 'usehooks-ts';
 import { BurgerStore } from '@/store/burger';
+import { GalleryStore } from '@/store/gallery';
 
 interface Props {
   className?: string;
@@ -42,6 +41,7 @@ export const navData = [
 
 export const Header: FC<Props> = ({ className }) => {
   const { pathname } = useLocation();
+
   const burger = BurgerStore((state) => state.burger);
   const setBurger = BurgerStore((state) => state.setBurger);
 
@@ -49,8 +49,6 @@ export const Header: FC<Props> = ({ className }) => {
     <>
       <AnimatePresence>
         {burger && <Burger burger={burger} setBurger={setBurger} />}
-
-        <Gallery />
       </AnimatePresence>
 
       <Animate>
