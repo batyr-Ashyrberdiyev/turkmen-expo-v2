@@ -54,7 +54,7 @@ export const Services = () => {
         <Container className="flex flex-col gap-[120px] py-16">
           <div className="flex flex-col md:gap-8 gap-6">
             {events.map((item, i) => (
-              <div key={i}>
+              <div key={i} className="flex flex-col gap-8">
                 <ServicesBlock i={i} {...item} reverse={i % 2 === 0} />
                 {i + 1 !== events.length && <hr className="border-OUTLINE_VAR" />}
               </div>
