@@ -35,7 +35,7 @@ export const ContactsForm: FC<Props> = ({ className = 'mx-auto', description = t
   };
 
   return (
-    <div className={cn(className, 'max-w-[628px]')}>
+    <div className={cn(className, 'md:w-[628px] w-full')}>
       {description && (
         <div className="flex flex-col md:gap-2 gap-4 text-center mb-8">
           <h3 className="h3 !text-ON_SURFACE">Давайте сотрудничать</h3>

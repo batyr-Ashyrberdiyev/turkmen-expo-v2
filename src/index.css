@@ -31,6 +31,10 @@
   body {
     @apply bg-SURFACE text-ON_SURFACE leading-[130%] font-[Gilroy];
   }
+
+  ::-webkit-scrollbar {
+    display: none;
+  }
 }
 
 @layer utilities {

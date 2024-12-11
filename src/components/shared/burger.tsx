@@ -1,4 +1,4 @@
-import { cn } from '@/lib/utils';
+import { cn, scrollLock } from '@/lib/utils';
 import { FC } from 'react';
 import { motion } from 'framer-motion';
 import { navData } from '../layout/header';
@@ -16,6 +16,7 @@ interface Props {
 }
 
 export const Burger: FC<Props> = ({ className, setBurger }) => {
+  scrollLock();
   const setLang = LangStore((state) => state.setLang);
 
   return (
@@ -25,7 +26,7 @@ export const Burger: FC<Props> = ({ className, setBurger }) => {
       exit={{ translateX: '100%', opacity: 0 }}
       transition={{ ease: [0.1, 0, 0.2, 1] }}
       className={cn(
-        'bg-SURFACE fixed top-0 bottom-0 right-0 left-0 z-30 pt-[96px] pb-6 min-h-screen overflow-y-auto w-full',
+        'bg-SURFACE absolute top-20 bottom-0 right-0 left-0 z-30 pt-8 pb-6 min-h-screen !overflow-y-auto w-full',
         className,
       )}>
       <div className="flex flex-col gap-6 px-4 overflow-y-auto">

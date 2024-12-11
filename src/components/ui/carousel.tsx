@@ -1,6 +1,6 @@
 import * as React from 'react';
 import useEmblaCarousel, { type UseEmblaCarouselType } from 'embla-carousel-react';
-import { ArrowLeft, ArrowRight, ChevronLeft, ChevronRight } from 'lucide-react';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
@@ -173,27 +173,21 @@ const CarouselItem = React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLD
 CarouselItem.displayName = 'CarouselItem';
 
 const CarouselPrevious = React.forwardRef<HTMLButtonElement, React.ComponentProps<typeof Button>>(
-  ({ className, variant = 'outline', size = 'icon', ...props }, ref) => {
-    const { orientation, scrollPrev, canScrollPrev } = useCarousel();
+  ({ className, variant = 'default', size = 'icon', ...props }, ref) => {
+    const { scrollPrev, canScrollPrev } = useCarousel();
 
     return (
-      <Button
+      <button
         ref={ref}
-        variant={variant}
-        size={size}
         className={cn(
-          'absolute h-8 w-8 rounded-full border-none',
-          orientation === 'horizontal'
-            ? '-left-12 top-1/2 -translate-y-1/2'
-            : '-top-12 left-1/2 -translate-x-1/2 rotate-90',
+          'absolute size-20 rounded-full group  disabled:cursor-default disabled:hover:scale-100 hover:scale-[1.2] border-none p-1',
           className,
         )}
         disabled={!canScrollPrev}
         onClick={scrollPrev}
         {...props}>
-        <ChevronLeft className="h-4 w-4" />
-        <span className="sr-only">Previous slide</span>
-      </Button>
+        <ChevronLeft className="size-full group-disabled:text-opacity-20 text-SURFACE" />
+      </button>
     );
   },
 );
@@ -201,26 +195,20 @@ CarouselPrevious.displayName = 'CarouselPrevious';
 
 const CarouselNext = React.forwardRef<HTMLButtonElement, React.ComponentProps<typeof Button>>(
   ({ className, variant = 'outline', size = 'icon', ...props }, ref) => {
-    const { orientation, scrollNext, canScrollNext } = useCarousel();
+    const { scrollNext, canScrollNext } = useCarousel();
 
     return (
-      <Button
+      <button
         ref={ref}
-        variant={variant}
-        size={size}
         className={cn(
-          'absolute size-20 rounded-full border-none',
-          orientation === 'horizontal'
-            ? '-right-12 top-1/2 -translate-y-1/2'
-            : '-bottom-12 left-1/2 -translate-x-1/2 rotate-90',
+          'absolute size-20 group rounded-full disabled:cursor-default disabled:hover:scale-100 hover:scale-[1.2] border-none p-1',
           className,
         )}
         disabled={!canScrollNext}
         onClick={scrollNext}
         {...props}>
-        <ChevronRight className="text-green-500" />
-        <span className="sr-only">Next slide</span>
-      </Button>
+        <ChevronRight className="size-full group-disabled:text-opacity-20 text-SURFACE" />
+      </button>
     );
   },
 );

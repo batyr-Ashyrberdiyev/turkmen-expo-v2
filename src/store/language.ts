@@ -1,16 +1,16 @@
-import { create } from "zustand";
-import { persist } from "zustand/middleware";
+import { create } from 'zustand';
+import { persist } from 'zustand/middleware';
 
 export enum LangsE {
-  RU = "ru",
-  EN = "en",
-  TM = "tm",
+  RU = 'ru',
+  EN = 'en',
+  TM = 'tm',
 }
 
 export enum LangsTitleE {
-  RU = "Русский",
-  EN = "English",
-  TM = "Türkmen",
+  RU = 'Русский',
+  EN = 'English',
+  TM = 'Türkmen',
 }
 
 interface LangType {
@@ -31,10 +31,10 @@ export const LangStore = create<LangStore>()(
         id: LangsE.RU,
       },
 
-      setLang: (obj) => set((state) => ({ lang: (state.lang = obj) })),
+      setLang: (obj) => set({ lang: obj }),
     }),
     {
-      name: "lang-store",
-    }
-  )
+      name: 'lang-store',
+    },
+  ),
 );

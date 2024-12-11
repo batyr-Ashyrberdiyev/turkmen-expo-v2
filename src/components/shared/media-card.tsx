@@ -5,11 +5,12 @@ interface Props {
   className?: string;
   title: string;
   img: string;
+  onClick?: VoidFunction;
 }
 
-export const MediaCard: FC<Props> = ({ className, title, img }) => {
+export const MediaCard: FC<Props> = ({ className, title, img, onClick }) => {
   return (
-    <article className={cn(className, 'bg-SURFACE_CONTAINER w-[298px]')}>
+    <article onClick={onClick} className={cn(className, 'bg-SURFACE_CONTAINER w-[298px]')}>
       <div className="size-[298px] mx-auto bg-IMG_BG/[8%]">
         <img src={img} alt="" className="size-full object-contain object-center" />
       </div>
