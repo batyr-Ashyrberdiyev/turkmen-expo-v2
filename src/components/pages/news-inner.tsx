@@ -66,7 +66,7 @@ export const NewsInner = () => {
           </Animate>
 
           <div className="md:grid-4 hidden">
-            {newsData.slice(0, 5).map((item, i) => (
+            {newsData.slice(0, 4).map((item, i) => (
               <NewsCard key={i} link={''} {...item} id="0" />
             ))}
           </div>
