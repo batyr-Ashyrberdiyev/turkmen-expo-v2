@@ -14,8 +14,6 @@ interface Props {
 const HomePartners: FC<Props> = ({ className }) => {
   const tab = useMediaQuery('(min-width: 768px)');
 
-  console.log(tab);
-
   return (
     <section className={cn(className, '')}>
       <Container>
