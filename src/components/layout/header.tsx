@@ -2,11 +2,10 @@ import { FC } from 'react';
 import { Container } from './container';
 import { Link, useLocation } from 'react-router-dom';
 import { cn } from '@/lib/utils';
-import { Animate, Burger, LangMenu, Logo, Socials, Gallery } from '../shared';
+import { Animate, Burger, LangMenu, Logo, Socials } from '../shared';
 import { MenuIcon, X } from 'lucide-react';
 import { AnimatePresence } from 'framer-motion';
 import { BurgerStore } from '@/store/burger';
-import { GalleryStore } from '@/store/gallery';
 
 interface Props {
   className?: string;

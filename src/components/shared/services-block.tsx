@@ -14,23 +14,6 @@ interface Props {
   i: number;
 }
 
-const itemVariants = {
-  initial: {
-    opacity: 0,
-    y: 50,
-  },
-  animate: (i: number) => ({
-    opacity: 1,
-    y: 0,
-
-    transition: {
-      delay: 0.4 * i,
-      ease: [0.1, 0, 0.2, 1],
-      duration: 0.4,
-    },
-  }),
-};
-
 export const ServicesBlock: FC<Props> = ({
   className,
   img,
@@ -38,7 +21,6 @@ export const ServicesBlock: FC<Props> = ({
   text,
   greenText,
   list,
-  i,
   reverse = false,
 }) => {
   return (

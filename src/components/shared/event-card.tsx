@@ -2,7 +2,6 @@ import { FC } from 'react';
 import { cn } from '@/lib/utils';
 import { MapPinIcon } from 'lucide-react';
 import { Button } from '../ui/button';
-import { Animate } from './animate';
 
 interface Props {
   className?: string;

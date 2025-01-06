@@ -1,4 +1,3 @@
-import { useParams } from 'react-router-dom';
 import { Container } from '../layout';
 import { Animate, NewsCard } from '../shared';
 import { scrollTop } from '@/lib/utils';
@@ -7,8 +6,6 @@ import { Carousel, CarouselContent, CarouselItem } from '../ui/carousel';
 
 export const NewsInner = () => {
   scrollTop();
-
-  const { id } = useParams();
 
   return (
     <div>
